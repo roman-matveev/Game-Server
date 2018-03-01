@@ -2,3 +2,4 @@ NAME		     EMAIL
 
 Roman Matveev	 rmatveev@student.bridgew.edu
 Dave Chamberlain d2chamberlain@bridgew.edu
+Jon OBrien       j14obrien@student.bridgew.edu
