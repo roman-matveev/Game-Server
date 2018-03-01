@@ -1,3 +1,4 @@
-NAME		EMAIL
+NAME		     EMAIL
 
-Roman Matveev	rmatveev@student.bridgew.edu
+Roman Matveev	 rmatveev@student.bridgew.edu
+Dave Chamberlain d2chamberlain@bridgew.edu
