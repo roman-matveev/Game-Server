@@ -5,5 +5,10 @@ import json
 # Create your views here.
 class HomePageView(APIView):
     def get(self, request=None, uname="test", format=None):
-        data = { "user": uname, "key2": "value2" }
+        try:
+            found_user = User.objects.get(name=uname)
+        except ObjectDoesNotExist as e:
+            return HttpResponse(json.dumps({"status":"NoSuchUser"}), status=404)
+
+        data = { "user": uname, "id": found_user.id }
         return HttpResponse(json.dumps(data))
