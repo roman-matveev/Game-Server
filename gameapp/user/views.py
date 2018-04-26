@@ -12,7 +12,8 @@ class HomePageView(APIView):
         if request.method == "GET":
             try:
                 found_user = User.objects.get(name=uname)
-                return HttpResponse(json.dumps({"status":"Success"}), status=200)
+                data = { "user": uname, "id": found_user.id }
+                return HttpResponse(json.dumps(data))
             except ObjectDoesNotExist as e:
                 return HttpResponse(json.dumps({"status":"NoSuchUser"}), status=404)
 
@@ -25,6 +26,3 @@ class HomePageView(APIView):
             u = User(name=uname)
             u.save()
             return HttpResponse(json.dumps({"status":"Success"}))
-
-        data = { "user": uname, "id": found_user.id }
-        return HttpResponse(json.dumps(data))
